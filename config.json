@@ -1,0 +1,18 @@
+{
+    "meta": {
+        "title": "Sushmanth Chinthala Boyina | Resume",
+        "description": "Sushmanth Chinthala Boyina - Software Engineer | AI / GenAI",
+        "author": "Sushmanth Chinthala Boyina"
+    },
+    "profile": {
+        "name": "Sushmanth Chinthala Boyina",
+        "role": "Software Engineer | AI / GenAI"
+    },
+    "resume": {
+        "file": "Sushmanth_Chinthala_Boyina_Resume.pdf"
+    },
+    "buttons": {
+        "open": "Open PDF",
+        "download": "Download Resume"
+    }
+}
