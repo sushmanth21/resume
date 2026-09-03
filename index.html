@@ -1,154 +1,21 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta id="meta-description" name="description" content="">
 
-<title>Sushmanth Chinthala Boyina | Resume</title>
+    <meta id="meta-author" name="author" content="">
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    <title id="page-title"></title>
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        font-family: Inter, -apple-system, BlinkMacSystemFont,
-                     "Segoe UI", Roboto, Arial, sans-serif;
-        background: #f6f7f9;
-        color: #111827;
-    }
-
-    .header {
-        height: 68px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 32px;
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid #e5e7eb;
-        position: relative;
-        z-index: 10;
-    }
-
-    .title {
-        font-size: 17px;
-        font-weight: 600;
-        letter-spacing: -0.2px;
-        color: #111827;
-    }
-
-    .subtitle {
-        font-size: 12px;
-        color: #6b7280;
-        margin-top: 2px;
-    }
-
-    .actions {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .view-button,
-    .download {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        padding: 9px 14px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 500;
-        transition: all 0.2s ease;
-    }
-
-    .view-button {
-        color: #374151;
-        background: #f3f4f6;
-        border: 1px solid #e5e7eb;
-    }
-
-    .view-button:hover {
-        background: #e5e7eb;
-    }
-
-    .download {
-        color: white;
-        background: #111827;
-        border: 1px solid #111827;
-    }
-
-    .download:hover {
-        background: #000000;
-        transform: translateY(-1px);
-    }
-
-    .pdf-container {
-        height: calc(100vh - 68px);
-        padding: 18px 24px 24px;
-        overflow: hidden;
-    }
-
-    .pdf-wrapper {
-        width: 100%;
-        height: 100%;
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow:
-            0 4px 12px rgba(0, 0, 0, 0.04),
-            0 1px 3px rgba(0, 0, 0, 0.03);
-    }
-
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-    }
-
-    @media (max-width: 600px) {
-        .header {
-            height: 60px;
-            padding: 0 16px;
-        }
-
-        .title {
-            font-size: 15px;
-        }
-
-        .subtitle {
-            display: none;
-        }
-
-        .view-button {
-            display: none;
-        }
-
-        .download {
-            padding: 8px 12px;
-            font-size: 12px;
-        }
-
-        .pdf-container {
-            height: calc(100vh - 60px);
-            padding: 10px;
-        }
-
-        .pdf-wrapper {
-            border-radius: 8px;
-        }
-    }
-</style>
+    <link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -156,51 +23,139 @@
 <body>
 
 
-<header class="header">
+    <header class="header">
 
-    <div>
-        <div class="title">
-            Sushmanth Chinthala Boyina
+        <div class="identity">
+
+            <h1 id="profile-name" class="name">
+            </h1>
+
+            <span id="profile-role" class="role">
+            </span>
+
         </div>
 
-        <div class="subtitle">
-            Software Engineer · AI / GenAI
+        <div class="actions">
+
+            <a id="open-button" class="button open-button" href="#" target="_blank" rel="noopener">
+            </a>
+
+            <a id="download-button" class="button download-button" href="#" download>
+            </a>
+
         </div>
-    </div>
 
-    <div class="actions">
+    </header>
 
-        <a
-            class="view-button"
-            href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/Sushmanth_Chinthala_Boyina_Resume.pdf"
-            target="_blank">
-            ↗ View PDF
-        </a>
+    <main class="viewer">
 
-        <a
-            class="download"
-            href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/Sushmanth_Chinthala_Boyina_Resume.pdf"
-            target="_blank"
-            download>
-            ↓ Download
-        </a>
+        <div class="pdf-container">
 
-    </div>
+            <iframe id="pdf-viewer" title="Resume PDF">
+            </iframe>
 
-</header>
+        </div>
 
-<main class="pdf-container">
+    </main>
 
-    <div class="pdf-wrapper">
+    <script>
 
-        <iframe
-            src="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/Sushmanth_Chinthala_Boyina_Resume.pdf">
-        </iframe>
+        fetch("config.json")
+            .then(response => {
 
-    </div>
+                if (!response.ok) {
+                    throw new Error("Unable to load config.json");
+                }
 
-</main>
+                return response.json();
+            })
+            .then(config => {
+
+                /* =========================
+                   META
+                ========================= */
+
+                document.title = config.meta.title;
+
+                document
+                    .getElementById("meta-description")
+                    .setAttribute(
+                        "content",
+                        config.meta.description
+                    );
+
+                document
+                    .getElementById("meta-author")
+                    .setAttribute(
+                        "content",
+                        config.meta.author
+                    );
+
+
+                /* =========================
+                   PROFILE
+                ========================= */
+
+                document
+                    .getElementById("profile-name")
+                    .textContent = config.profile.name;
+
+                document
+                    .getElementById("profile-role")
+                    .textContent = config.profile.role;
+
+
+                /* =========================
+                   RESUME
+                ========================= */
+
+                const resumeFile = config.resume.file;
+
+
+                /* =========================
+                   BUTTONS
+                ========================= */
+
+                const openButton =
+                    document.getElementById("open-button");
+
+                const downloadButton =
+                    document.getElementById("download-button");
+
+                openButton.textContent =
+                    config.buttons.open;
+
+                downloadButton.textContent =
+                    config.buttons.download;
+
+                openButton.href = resumeFile;
+
+                downloadButton.href = resumeFile;
+
+
+                /* =========================
+                   PDF VIEWER
+                ========================= */
+
+                document
+                    .getElementById("pdf-viewer")
+                    .src = resumeFile;
+
+            })
+            .catch(error => {
+
+                console.error(error);
+
+                document
+                    .getElementById("profile-name")
+                    .textContent =
+                    "Unable to load resume";
+
+            });
+
+    </script>
 
 
 </body>
+
 </html>
