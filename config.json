@@ -1,15 +1,15 @@
 {
     "meta": {
         "title": "Sushmanth Chinthala Boyina | Resume",
-        "description": "Sushmanth Chinthala Boyina - Software Engineer | AI / GenAI",
+        "description": "Sushmanth Chinthala Boyina - Software Engineer specializing in GenAI and Agentic AI",
         "author": "Sushmanth Chinthala Boyina"
     },
     "profile": {
         "name": "Sushmanth Chinthala Boyina",
-        "role": "Software Engineer | AI / GenAI"
+        "role": "Software Engineer · GenAI & Agentic AI"
     },
     "resume": {
-        "file": "https://sushmanth21.github.io/resume/Sushmanth_Chinthala_Boyina_Resume.pdf"
+        "file": "Sushmanth_Chinthala_Boyina_Resume.pdf"
     },
     "buttons": {
         "open": "Open PDF",
