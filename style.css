@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+
+  background: #edf1f8;
+  color: #172033;
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.header {
+  height: 58px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 22px;
+
+  background: linear-gradient(120deg, #f8faff 0%, #f1f4ff 48%, #f6f1ff 100%);
+
+  border-bottom: 1px solid #dce2f0;
+
+  position: relative;
+  z-index: 10;
+
+  box-shadow: 0 2px 12px rgba(70, 86, 130, 0.08);
+}
+
+.header::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg, #6384d8 0%, #7d72d8 50%, #9a70cf 100%);
+}
+
+/* =========================
+IDENTITY
+========================= */
+
+.identity {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  letter-spacing: -0.25px;
+
+  color: #172033;
+
+  white-space: nowrap;
+}
+
+.role {
+  display: inline-block;
+
+  margin-left: 11px;
+  padding-left: 11px;
+
+  border-left: 1px solid #bcc6dc;
+
+  color: #4d5a73;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.05px;
+
+  white-space: nowrap;
+}
+
+/* =========================
+ACTIONS
+========================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.button {
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 14px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =========================
+OPEN PDF
+========================= */
+
+.open-button {
+  color: #43588f;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid #c1cce5;
+
+  box-shadow: 0 1px 3px rgba(75, 91, 135, 0.06);
+}
+
+.open-button:hover {
+  color: #344a82;
+
+  background: #ffffff;
+
+  border-color: #a9b9dc;
+
+  box-shadow: 0 3px 10px rgba(80, 98, 150, 0.12);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+DOWNLOAD
+========================= */
+
+.download-button {
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #526fc7, #7165c5);
+
+  border: 1px solid #5e70c0;
+
+  box-shadow: 0 3px 10px rgba(80, 96, 185, 0.23);
+}
+
+.download-button:hover {
+  background: linear-gradient(135deg, #4966bd, #665ab9);
+
+  box-shadow: 0 5px 14px rgba(80, 96, 185, 0.3);
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+PDF VIEWER
+========================= */
+
+.viewer {
+  width: 100%;
+  height: calc(100vh - 58px);
+
+  padding: 7px 9px 9px;
+
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #edf1f8 0%, #eef1f7 55%, #f1eef8 100%);
+}
+
+.pdf-container {
+  width: 100%;
+  height: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #d7ddeb;
+
+  border-radius: 7px;
+
+  box-shadow: 0 5px 20px rgba(67, 79, 112, 0.12);
+
+  overflow: hidden;
+}
+
+iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background: #ffffff;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .header {
+    height: 54px;
+
+    padding: 0 12px;
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .role {
+    display: none;
+  }
+
+  .open-button {
+    display: none;
+  }
+
+  .download-button {
+    height: 30px;
+
+    padding: 0 11px;
+
+    font-size: 11px;
+  }
+
+  .viewer {
+    height: calc(100vh - 54px);
+
+    padding: 4px;
+  }
+
+  .pdf-container {
+    border-radius: 5px;
+  }
+}
